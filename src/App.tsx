@@ -752,25 +752,25 @@ const Outcomes = () => {
       </svg>
 
       <div className="container mx-auto px-6 relative z-10 flex flex-col items-center text-center">
-        <div className="max-w-4xl mb-12">
+        <div className="max-w-4xl mb-2 md:mb-4">
           <RevealChild>
-            <div className="inline-block px-5 py-2 rounded-full bg-primary-blue/5 text-primary-blue font-black text-xs uppercase tracking-[0.3em] mb-8">
+            <div className="inline-block px-4 py-1 rounded-full bg-primary-blue/5 text-primary-blue font-black text-[10px] uppercase tracking-[0.3em] mb-2">
               The Foundation
             </div>
           </RevealChild>
           <RevealChild>
-            <h2 className="text-4xl md:text-7xl font-black text-dark-blue leading-[0.85] tracking-tighter mb-8">
+            <h2 className="text-3xl md:text-5xl font-black text-dark-blue leading-[0.85] tracking-tighter mb-2">
               Values That <br/>Last a <span className="text-primary-blue">Lifetime</span>
             </h2>
           </RevealChild>
           <RevealChild>
-            <p className="text-xl md:text-2xl text-secondary-blue/60 leading-relaxed font-medium mx-auto max-w-2xl">
+            <p className="text-base md:text-lg text-secondary-blue/60 leading-relaxed font-medium mx-auto max-w-2xl">
               We believe in nurturing the core character of every child. Through our modules, we instill foundational virtues that go beyond academics.
             </p>
           </RevealChild>
         </div>
 
-        <div className="relative w-full h-[150px] md:h-[300px] flex items-center justify-center" style={{ filter: "url(#threshold)" }}>
+        <div className="relative w-full h-[120px] md:h-[220px] flex items-center justify-center" style={{ filter: "url(#threshold)" }}>
           {values.map((word, i) => (
             <MorphWord 
               key={word} 
@@ -809,11 +809,11 @@ const Curriculum = () => {
 
 const FinalCTA = () => {
   const kitItems = [
-    { name: "Certificate", desc: "Official Completion Badge", icon: <Trophy className="text-amber-500" /> },
-    { name: "Drawing Sheet", desc: "Creative sketching canvas", icon: <Pencil className="text-blue-400" /> },
-    { name: "Coloring Sheet", desc: "Story-based coloring art", icon: <Palette className="text-rose-400" /> },
-    { name: "Maze Master", desc: "Brain-teasing puzzle games", icon: <Gamepad2 className="text-emerald-400" /> },
-    { name: "Mind Games", desc: "Word Search & Connect Dots", icon: <Puzzle className="text-purple-400" /> },
+    { name: "Certificate", desc: "Digital Achievement Badge", icon: <Trophy className="text-amber-500" /> },
+    { name: "Drawing Sheet", desc: "Printable sketch canvas", icon: <Pencil className="text-blue-400" /> },
+    { name: "Coloring Sheet", desc: "Printable coloring art", icon: <Palette className="text-rose-400" /> },
+    { name: "Maze Master", desc: "Interactive PDF puzzles", icon: <Gamepad2 className="text-emerald-400" /> },
+    { name: "Mind Games", desc: "Digital Word Search", icon: <Puzzle className="text-purple-400" /> },
   ];
 
   return (
@@ -825,43 +825,25 @@ const FinalCTA = () => {
             <div className="absolute top-0 right-0 w-96 h-96 bg-primary-blue/5 rounded-full blur-3xl -mr-48 -mt-48" />
             <div className="absolute bottom-0 left-0 w-96 h-96 bg-gold/5 rounded-full blur-3xl -ml-48 -mb-48" />
             
-            <div className="md:w-3/5 text-center md:text-left z-10">
+            <div className="md:w-1/2 text-center md:text-left z-10">
               <RevealChild>
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#112b47] text-white rounded-xl text-sm font-black uppercase tracking-widest mb-8">
-                  <Gift size={16} />
-                  EXCLUSIVE GIFT
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#be8c4a] text-white rounded-xl text-sm font-black uppercase tracking-widest mb-8 shadow-lg">
+                  <Star size={16} fill="currentColor" className="text-white" />
+                  TRIAL COMPLETION REWARD
                 </div>
               </RevealChild>
               
               <RevealChild>
                 <h2 className="text-5xl md:text-7xl font-bold text-[#112b47] mb-8 leading-tight">
-                  Ready to Join <br/>the Journey?
+                  The Journey <br/>Awaits!
                 </h2>
               </RevealChild>
               
               <RevealChild>
                 <p className="text-xl text-[#112b47]/80 mb-12 max-w-xl font-medium leading-relaxed">
-                  Book your trial session. Complete it to receive your <span className="text-[#112b47] font-black">Exclusive Starter Kit</span>!
+                  Book your 1:1 session today. Once finished, we'll unlock your <span className="text-[#112b47] font-black underline decoration-gold/50 decoration-4 underline-offset-4">Success Kit</span> containing all the digital goodies below!
                 </p>
               </RevealChild>
-              
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
-                {kitItems.map((item, i) => (
-                  <RevealChild key={i}>
-                    <div 
-                      className="bg-white/60 backdrop-blur-sm p-4 rounded-2xl flex items-center gap-4 border border-white/50 group hover:bg-white transition-all shadow-sm hover:shadow-md"
-                    >
-                      <div className="w-12 h-12 rounded-xl bg-white shadow-inner flex items-center justify-center group-hover:scale-110 transition-transform">
-                        {React.cloneElement(item.icon as React.ReactElement, { size: 24 })}
-                      </div>
-                      <div>
-                        <div className="text-[#112b47] font-black text-sm uppercase tracking-tight">{item.name}</div>
-                        <div className="text-[#112b47]/40 text-[10px] font-black uppercase tracking-wider">{item.desc}</div>
-                      </div>
-                    </div>
-                  </RevealChild>
-                ))}
-              </div>
 
               <RevealChild>
                 <motion.button 
@@ -869,29 +851,104 @@ const FinalCTA = () => {
                   whileTap={{ scale: 0.95 }}
                   className="px-14 py-6 bg-[#112b47] text-white rounded-3xl font-black text-2xl shadow-xl transition-all flex items-center gap-4 group mx-auto md:mx-0"
                 >
-                  Book Trial
+                  Book Free Trial
                   <ArrowRight size={28} className="group-hover:translate-x-1 transition-transform" />
                 </motion.button>
               </RevealChild>
             </div>
 
-            <div className="md:w-2/5 relative z-10 flex justify-center">
-              <motion.div
-                animate={{ 
-                  rotate: [-4, 4, -4],
-                  y: [0, -15, 0]
-                }}
-                transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-                className="bg-[#112b47] w-full max-w-[340px] aspect-square rounded-[60px] shadow-2xl flex flex-col items-center justify-center text-center p-12 border-8 border-white/10 relative"
-              >
-                <div className="absolute inset-4 border-2 border-white/5 rounded-[50px] pointer-events-none" />
-                <span className="text-7xl font-black text-white mb-2 tracking-tighter drop-shadow-lg text-center leading-none">FREE<br/>KIT</span>
-                <div className="w-16 h-1.5 bg-gold my-6 rounded-full" />
-                <span className="text-gold font-black text-sm uppercase tracking-[0.25em] leading-relaxed">
-                  AFTER YOUR<br/>TRIAL SESSION
-                </span>
-                <div className="mt-4 text-white/40 text-[10px] font-black uppercase tracking-widest text-center">Exclusive Gift Pack</div>
-              </motion.div>
+            <div className="md:w-1/2 relative z-10 flex justify-center items-center h-[500px]">
+              {/* Playful Gift Reveal Container */}
+              <div className="relative w-full max-w-[400px] h-[400px] flex items-center justify-center">
+                
+                {/* Floating Reward Cards */}
+                <AnimatePresence>
+                  {kitItems.map((item, i) => {
+                    const angles = [-150, -75, 0, 75, 150];
+                    const angle = (angles[i] * Math.PI) / 180;
+                    const radius = 210;
+                    const x = Math.cos(angle) * (radius + (i % 2 === 0 ? 20 : 0));
+                    const y = Math.sin(angle) * radius;
+
+                    return (
+                      <motion.div
+                        key={i}
+                        initial={{ scale: 0, x: 0, y: 0, opacity: 0 }}
+                        whileInView={{ scale: 1, x: x, y: y, opacity: 1 }}
+                        animate={{
+                          y: [y, y - 10, y],
+                          rotate: [0, i % 2 === 0 ? 3 : -3, 0]
+                        }}
+                        transition={{ 
+                          delay: 0.5 + i * 0.1,
+                          y: { repeat: Infinity, duration: 4 + i, ease: "easeInOut" },
+                          scale: { type: "spring", stiffness: 100, damping: 10 }
+                        }}
+                        viewport={{ once: true }}
+                        className="absolute bg-white p-3 rounded-2xl shadow-[0_15px_35px_rgba(0,0,0,0.12)] border border-dark-blue/5 flex items-center gap-3 min-w-[150px] z-20 group hover:scale-110 transition-transform"
+                      >
+                        <div className="w-10 h-10 rounded-lg bg-gray-50 flex items-center justify-center shadow-inner">
+                          {React.cloneElement(item.icon as React.ReactElement, { size: 20 })}
+                        </div>
+                        <div className="text-left">
+                          <div className="text-[#112b47] font-black text-[10px] uppercase tracking-tight">{item.name}</div>
+                          <div className="text-secondary-blue/40 text-[8px] font-black uppercase tracking-wider">LOCKED</div>
+                        </div>
+                      </motion.div>
+                    );
+                  })}
+                </AnimatePresence>
+
+                {/* Central Reward Graphic */}
+                <motion.div
+                  initial={{ scale: 0.8, opacity: 0 }}
+                  whileInView={{ scale: 1, opacity: 1 }}
+                  viewport={{ once: true }}
+                  className="relative z-10"
+                >
+                  <motion.div 
+                    animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0.4, 0.2] }}
+                    transition={{ repeat: Infinity, duration: 3 }}
+                    className="absolute inset-0 bg-primary-blue rounded-full blur-[60px] transform -translate-y-4"
+                  />
+                  
+                  <div className="relative bg-white p-10 rounded-[48px] shadow-2xl border-4 border-gold/20 flex flex-col items-center min-w-[200px]">
+                    <motion.div
+                      animate={{ rotate: [0, -5, 5, 0] }}
+                      transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
+                    >
+                      <Gift size={70} className="text-gold" strokeWidth={1.5} />
+                    </motion.div>
+                    <div className="mt-4 text-center">
+                      <div className="text-[#112b47] font-black text-sm uppercase tracking-[0.2em] mb-1">YOUR GIFT</div>
+                      <div className="px-4 py-1.5 bg-primary-blue/10 rounded-full text-primary-blue text-[10px] font-black uppercase tracking-widest">
+                        POST-TRIAL
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Decorative Sparkles */}
+                  {[...Array(6)].map((_, i) => (
+                    <motion.div
+                      key={i}
+                      animate={{
+                        scale: [0, 1, 0],
+                        opacity: [0, 1, 0],
+                        y: [0, -50, -80],
+                        x: [0, (i % 2 === 0 ? 40 : -40), (i % 2 === 0 ? 60 : -60)]
+                      }}
+                      transition={{
+                        repeat: Infinity,
+                        duration: 2.5 + i * 0.5,
+                        delay: i * 0.4
+                      }}
+                      className="absolute top-1/2 left-1/2 text-gold z-0"
+                    >
+                      <Sparkles size={16} fill="currentColor" />
+                    </motion.div>
+                  ))}
+                </motion.div>
+              </div>
             </div>
           </div>
         </RevealChild>
@@ -942,6 +999,166 @@ const Footer = () => {
         </div>
       </div>
     </footer>
+  );
+};
+
+const FAQs = () => {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const faqs = [
+    {
+      q: "What does Infineo do?",
+      a: "Infineo is an ed-tech platform that provides live 1:1 storytelling classes for kids aged 5-12. We use traditional Hinduism stories to help children build confidence, focus, and emotional strength while solving modern-day challenges like shyness and screen addiction."
+    },
+    {
+      q: "What is the class format and duration?",
+      a: "Each session is a live 1:1 interactive class on Zoom that lasts for 30 minutes. This ensures your child gets the educator's undivided attention throughout the journey."
+    },
+    {
+      q: "How often are the classes conducted?",
+      a: "Classes are typically held twice per week. The schedule is flexible and can be customized by parents based on their child's routine and availability."
+    },
+    {
+      q: "Is there a free trial class?",
+      a: "Yes! We offer a one-time free trial class of 30 minutes. Upon successful completion of the trial, we also provide an exclusive kit containing drawing sheets, coloring sheets, maze games, and more."
+    },
+    {
+      q: "What is the pricing for the program?",
+      a: "After the free trial, our standard pricing is ₹5,000 for 10 classes (₹500 per class). We also have an inaugural offer of ₹4,500 for 10 classes (₹450 per class) and further discounts for longer enrollments."
+    }
+  ];
+
+  return (
+    <SectionReveal id="faqs" className="py-20 bg-white/30 backdrop-blur-xl relative overflow-hidden">
+      <div className="container mx-auto px-6 max-w-4xl relative z-10">
+        <div className="text-center mb-16">
+          <RevealChild>
+            <h2 className="text-4xl md:text-6xl font-black text-dark-blue mb-4 tracking-tighter text-center">
+              Common <span className="text-primary-blue">Questions</span>
+            </h2>
+          </RevealChild>
+          <RevealChild>
+            <p className="text-lg text-secondary-blue/60 font-medium">Everything you need to know about starting your child's journey.</p>
+          </RevealChild>
+        </div>
+
+        <div className="space-y-4">
+          {faqs.map((faq, i) => (
+            <RevealChild key={i}>
+              <button
+                onClick={() => setOpenIndex(openIndex === i ? null : i)}
+                className={`w-full text-left p-6 md:p-8 rounded-[32px] transition-all duration-500 border-2 ${
+                  openIndex === i 
+                    ? "bg-white border-primary-blue shadow-xl" 
+                    : "bg-white/50 border-white hover:border-primary-blue/30"
+                }`}
+              >
+                <div className="flex justify-between items-center gap-4">
+                  <span className={`text-lg md:text-xl font-black ${openIndex === i ? "text-primary-blue" : "text-dark-blue"}`}>
+                    {faq.q}
+                  </span>
+                  <motion.div
+                    animate={{ rotate: openIndex === i ? 45 : 0 }}
+                    className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center ${openIndex === i ? "bg-primary-blue text-white" : "bg-dark-blue/5 text-dark-blue"}`}
+                  >
+                    <Zap size={16} fill={openIndex === i ? "currentColor" : "none"} />
+                  </motion.div>
+                </div>
+                <AnimatePresence>
+                  {openIndex === i && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0, marginTop: 0 }}
+                      animate={{ height: "auto", opacity: 1, marginTop: 24 }}
+                      exit={{ height: 0, opacity: 0, marginTop: 0 }}
+                      className="overflow-hidden"
+                    >
+                      <p className="text-secondary-blue/80 text-lg leading-relaxed font-sans font-medium">
+                        {faq.a}
+                      </p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </button>
+            </RevealChild>
+          ))}
+        </div>
+      </div>
+    </SectionReveal>
+  );
+};
+
+const Testimonials = () => {
+  const testimonials = [
+    {
+      name: "Priya Sharma",
+      role: "Parent of 7yo",
+      desc: "My daughter used to be very shy. After just one module on Ganesha stories, she's narrated the 'Moon' story to everyone who visits us. Her confidence has soared!",
+      avatar: "https://i.pravatar.cc/150?u=priya",
+      color: "bg-blue-50"
+    },
+    {
+      name: "Rajesh Iyer",
+      role: "Parent of 9yo",
+      desc: "Finding high-quality cultural education that isn't boring was a challenge. Infineo's 1:1 sessions are interactive and my son actually looks forward to them every week.",
+      avatar: "https://i.pravatar.cc/150?u=rajesh",
+      color: "bg-gold/10"
+    },
+    {
+      name: "Anjali Mehta",
+      role: "Parent of 6yo",
+      desc: "I was worried about screen addiction. But these 30 minutes are so productive. She learns valuable life lessons through stories that I struggled to teach her myself.",
+      avatar: "https://i.pravatar.cc/150?u=anjali",
+      color: "bg-emerald-50"
+    }
+  ];
+
+  return (
+    <SectionReveal id="testimonials" className="py-20 bg-transparent relative overflow-hidden">
+      <div className="container mx-auto px-6 max-w-7xl relative z-10">
+        <div className="text-center mb-16">
+          <RevealChild>
+            <h2 className="text-4xl md:text-7xl font-black text-dark-blue mb-4 tracking-tighter">
+              Happy <span className="text-primary-blue">Families</span>
+            </h2>
+          </RevealChild>
+          <RevealChild>
+            <p className="text-xl text-secondary-blue/60 font-medium">See how Infineo is making a difference in children's lives.</p>
+          </RevealChild>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {testimonials.map((t, i) => (
+            <RevealChild key={i}>
+              <motion.div
+                whileHover={{ y: -10 }}
+                className={`${t.color} p-10 rounded-[48px] border-2 border-white shadow-sm hover:shadow-2xl transition-all duration-500 h-full flex flex-col`}
+              >
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-16 h-16 rounded-2xl overflow-hidden border-2 border-white shadow-md">
+                    <img src={t.avatar} alt={t.name} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                  </div>
+                  <div>
+                    <h4 className="font-black text-dark-blue">{t.name}</h4>
+                    <p className="text-xs text-secondary-blue font-bold uppercase tracking-widest">{t.role}</p>
+                  </div>
+                </div>
+                <div className="relative">
+                  <MessageSquare className="absolute -top-4 -left-4 text-primary-blue/10 w-12 h-12" />
+                  <p className="text-lg text-secondary-blue/80 font-medium leading-relaxed italic relative z-10">
+                    "{t.desc}"
+                  </p>
+                </div>
+                <div className="mt-8 flex gap-1">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} size={16} fill="#be8c4a" className="text-gold" />
+                  ))}
+                </div>
+              </motion.div>
+            </RevealChild>
+          ))}
+        </div>
+      </div>
+    </SectionReveal>
   );
 };
 
@@ -1110,7 +1327,8 @@ export default function App() {
           
           <div className="hidden md:flex items-center gap-8">
              <button onClick={() => scrollToSection("how-it-works")} className="text-sm font-bold text-secondary-blue hover:text-primary-blue transition-colors">How it works</button>
-             <button onClick={() => scrollToSection("outcomes")} className="text-sm font-bold text-secondary-blue hover:text-primary-blue transition-colors">Outcomes</button>
+             <button onClick={() => scrollToSection("testimonials")} className="text-sm font-bold text-secondary-blue hover:text-primary-blue transition-colors">Families</button>
+             <button onClick={() => scrollToSection("faqs")} className="text-sm font-bold text-secondary-blue hover:text-primary-blue transition-colors">FAQs</button>
              <motion.button 
                whileHover={{ scale: 1.05, backgroundColor: "#be8c4a" }}
                whileTap={{ scale: 0.95 }}
@@ -1134,10 +1352,12 @@ export default function App() {
       <SectionBridge color="text-primary-blue/20" height="h-10 md:h-12" />
       <WaveDivider color="fill-white/10" />
       <WhyParents />
+      <Testimonials />
       <Outcomes />
       <SectionBridge color="text-indigo-400/20" height="h-8 md:h-10" />
       <Curriculum />
       <SectionBridge color="text-amber-400/20" height="h-10 md:h-12" />
+      <FAQs />
       <FinalCTA />
       <Footer />
     </main>
